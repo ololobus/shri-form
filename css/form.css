@@ -1,0 +1,10 @@
+body{
+  font: .8em Arial, Helvetica, sans-serif;
+  color: #000;
+}
+
+.container{
+  width:604px;
+  margin:0 auto;
+}
+
