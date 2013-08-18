@@ -1,6 +1,8 @@
 <!DOCTYPE HTML>
 <html>
   <head>
+    <meta charset=utf-8>
+    
     <script src="js/lib/jquery-2.0.3.js" type="text/javascript"></script>
     <script src="js/lib/handlebars.runtime.js" type="text/javascript"></script>
     <script src="js/lib/handlebars-1.0.0.js" type="text/javascript"></script>
@@ -29,6 +31,10 @@
           <div id="form-questionary" class="form-group">
             <div class="form-group-title">
               <h3>Заполните анкету <div class="chevron-icon"></div></h3>
+            </div>
+            <div id="questionary-progress" class="progress-bar">
+              <div class="bar"></div>
+              <div class="count">0%</div>
             </div>
             <div class="form-group-content">
               <table id="questions-container" class="table"></table>
@@ -129,6 +135,7 @@
             </div>
           </div>
           
+          <br>
           <button id="form-submit" class="button">Отправить</button>
           
         </form>

@@ -17,6 +17,21 @@ window.form = {
         $(self).children('.chevron-icon').toggleClass('down');
       });
     });
+    
+    // Следим за прогрессом в вопросах
+    var self = this;
+    $(document).on('change', '.question-text-input', function(ev) {
+      var answers = 0;
+      $('.question-text-input').each(function(i) {
+        if ($(this).val() != "") {
+          answers += 1
+        };
+      });
+      var progress = Math.floor(answers / self.questions_proto.length * 100);
+      var bar = $('#questionary-progress');
+      bar.find('.count').text(progress + "%");
+      bar.find('.bar').animate({width: progress + "%"}, 400); //.css('width', progress + "%");
+    });
   },
   
   // Рендерит вопросы из списка по шаблону
@@ -47,7 +62,7 @@ window.form = {
     if (file_input[0].files.length == 0) {
       valid = true;
     } else {
-      if (file_input[0].files.length == 1 && file_input[0].files[0].size <= this.file_limit){
+      if (file_input[0].files.length == 1 && file_input[0].files[0].size <= this.file_limit) {
         valid = true;
       } else {
         valid = false;
