@@ -41,7 +41,95 @@
             </div>
             <div class="form-group-content">
               <table id="about-container" class="table">
-                
+                <tr>
+                  <td>
+                    Резюме до 250 КБ
+                  </td>
+                  <td>
+                    <input type="file" class="" hidefocus="true" name="FileResume" value="">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label for="MK">Ссылка на профиль в Моем Круге</label>
+                  </td>
+                  <td>
+                    <input id="MK" class="about-input url-input" name="MK" type="url">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label for="FIO">Имя, Фамилия</label>
+                  </td>
+                  <td>
+                    <input id="FIO" class="about-input name-input" name="FIO" type="text">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label for="Phone">Телефон</label>
+                  </td>
+                  <td>
+                    <input id="Phone" class="about-input phone-input" name="Phone" type="tel">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label for="Email">E-mail</label>
+                  </td>
+                  <td>
+                    <input id="Email" class="about-input email-input" name="Email" type="xsd:email">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label for="MoreInfo">Дополнительные сведения</label>
+                  </td>
+                  <td>
+                    <textarea class="about-input text-input" rows="4" cols="80" name="MoreInfo" id="MoreInfo"></textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>
+                    <label for="RecommendBy">Откуда вы&nbsp;узнали о&nbsp;нашем предложении?</label>
+                    <br>
+                    <select class="about-input select-input" id="RecommendBy" name="RecommendBy">
+                      <option class="" value="no">Выбрать</option>
+                      <option class="" value="от HR-менеджера Яндекса">от HR-менеджера Яндекса</option>
+                      <option class="" value="Я.Субботник">Я.Субботник</option>
+                      <option class="" value="Yet another Conference">Yet another Conference</option>
+                      <option class="" value="на другой конференции">на другой конференции</option>
+                      <option class="" value="из поиска">из поиска</option>
+                      <option class="" value="по рекомендации">по рекомендации</option>
+                      <option class="" value="other">другое</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>
+                    <input type="checkbox" value="true" id="agree-checkbox" name="agree" class="checkbox-input" checked="checked">
+                    <label for="agree-checkbox">
+                      <b>
+                        &nbsp;Я даю свое согласие на&nbsp;передачу в&nbsp;ООО&nbsp;«ЯНДЕКС»
+                        резюме и/или&nbsp;анкеты, содержащих мои персональные данные, и&nbsp;согласен
+                        с&nbsp;тем, что они будут храниться в&nbsp;ООО&nbsp;«ЯНДЕКС»
+                        в&nbsp;течение 5&nbsp;лет и&nbsp;будут обрабатываться
+                        исключительно для целей предложения мне вакансий группы компаний
+                        «ЯНДЕКС»,
+                        в&nbsp;соответствии с&nbsp;Федеральным законом «О&nbsp;персональных
+                        данных».
+                      </b>
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>
+                    <button id="form-submit" class="button">Отправить</button>
+                  </td>
+                </tr>
               </table>
             </div>
           </div>
@@ -54,7 +142,7 @@
     <!-- Шаблоны -->
     <script id="question-template" type="text/x-handlebars-template">
       <tr>
-        <td><div class="question-id">Вопрос {{id}}</div></td>
+        <td><div class="question-id"><em>Вопрос {{id}}</em></div></td>
         <td>
           <div class="question-text"><b>{{{text}}}</b></div>
           <div class="question-input">
