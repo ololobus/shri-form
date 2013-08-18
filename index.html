@@ -24,11 +24,11 @@
           <p>Подробности о Школе читайте на <a href="http://events.yandex.ru/shri/" class="link" target="_blank">этой странице</a>.</p>
         </div>
         
-        <form action="/job/vacancies/shri_2013.xml" method="post" enctype="multipart/form-data" class="" id="form-form" onsubmit="return form.check();">
+        <form action="http://company.yandex.ru/job/vacancies/shri_2013.xml" method="post" enctype="multipart/form-data" class="" id="form-form" onsubmit="return form.check();">
         
           <div id="form-questionary" class="form-group">
             <div class="form-group-title">
-              <h3>Заполните анкету</h3>
+              <h3>Заполните анкету <div class="chevron-icon"></div></h3>
             </div>
             <div class="form-group-content">
               <table id="questions-container" class="table"></table>
@@ -37,12 +37,12 @@
         
           <div id="form-about" class="form-group">
             <div class="form-group-title">
-              <h3>Расскажите нам о себе</h3>
+              <h3>Расскажите нам о себе <div class="chevron-icon"></div></h3>
             </div>
             <div class="form-group-content">
               <table id="about-container" class="table">
                 <tr>
-                  <td>
+                  <td class="left-column">
                     Резюме до 250 КБ
                   </td>
                   <td>
@@ -50,39 +50,40 @@
                   </td>
                 </tr>
                 <tr>
-                  <td>
+                  <td class="left-column">
                     <label for="MK">Ссылка на профиль в Моем Круге</label>
                   </td>
                   <td>
-                    <input id="MK" class="about-input url-input" name="MK" type="url">
+                    <input id="MK" class="about-input text-input url-input" name="MK" type="url">
                   </td>
                 </tr>
                 <tr>
-                  <td>
+                  <td class="left-column">
                     <label for="FIO">Имя, Фамилия</label>
                   </td>
                   <td>
-                    <input id="FIO" class="about-input name-input" name="FIO" type="text">
+                    <input id="FIO" class="about-input text-input name-input" name="FIO" type="text">
                   </td>
                 </tr>
                 <tr>
-                  <td>
+                  <td class="left-column">
                     <label for="Phone">Телефон</label>
                   </td>
                   <td>
-                    <input id="Phone" class="about-input phone-input" name="Phone" type="tel">
+                    <input id="Phone" class="about-input text-input phone-input" name="Phone" type="tel">
+                    <p class="input-note">Пожалуйста, укажите код города</p>
                   </td>
                 </tr>
                 <tr>
-                  <td>
-                    <label for="Email">E-mail</label>
+                  <td class="left-column">
+                    <label for="Email"><b>E-mail</b></label>
                   </td>
                   <td>
-                    <input id="Email" class="about-input email-input" name="Email" type="xsd:email">
+                    <input id="Email" class="about-input text-input email-input" name="Email" type="xsd:email">
                   </td>
                 </tr>
                 <tr>
-                  <td>
+                  <td class="left-column">
                     <label for="MoreInfo">Дополнительные сведения</label>
                   </td>
                   <td>
@@ -109,7 +110,7 @@
                 <tr>
                   <td></td>
                   <td>
-                    <input type="checkbox" value="true" id="agree-checkbox" name="agree" class="checkbox-input" checked="checked">
+                    <input type="checkbox" value="true" id="agree-checkbox" name="agree" class="checkbox-input">
                     <label for="agree-checkbox">
                       <b>
                         &nbsp;Я даю свое согласие на&nbsp;передачу в&nbsp;ООО&nbsp;«ЯНДЕКС»
@@ -124,16 +125,12 @@
                     </label>
                   </td>
                 </tr>
-                <tr>
-                  <td></td>
-                  <td>
-                    <button id="form-submit" class="button">Отправить</button>
-                  </td>
-                </tr>
               </table>
             </div>
           </div>
-        
+          
+          <button id="form-submit" class="button">Отправить</button>
+          
         </form>
         
       </div>
@@ -141,10 +138,11 @@
     
     <!-- Шаблоны -->
     <script id="question-template" type="text/x-handlebars-template">
-      <tr>
-        <td><div class="question-id"><em>Вопрос {{id}}</em></div></td>
+      <tr class="question">
+        <td class="left-column"><div class="question-id"><label for="q{{id}}_1"><em>Вопрос {{id}}</em></label></div></td>
         <td>
           <div class="question-text"><b>{{{text}}}</b></div>
+          <br>
           <div class="question-input">
             {{{extra_input}}}
             <textarea class="question-text-input" rows="4" cols="80" name="q{{id}}_1" id="q{{id}}_1"></textarea>
