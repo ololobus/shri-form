@@ -100,13 +100,30 @@ li{
   width:100%;
   margin:0;
   padding-left:4px;
+  border:0px solid #e5e5e5;
   outline:0;
   color:#000;
   -webkit-box-sizing:border-box;
   -moz-box-sizing:border-box;
   box-sizing:border-box;
 }
-
+.input-outline{
+  display:block;
+  margin:0;
+  padding:0;
+  border-collapse: separate;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-color: #a3a3a3 #c6c6c6 #e5e5e5;
+  -webkit-box-shadow: inset 0 1px 1px #cfcfcf;
+  -moz-box-shadow: inset 0 1px 1px #cfcfcf;
+  box-shadow: inset 0 1px 1px #cfcfcf;
+}
+  .input-outline.focused{
+    -webkit-box-shadow: inset 0 1px 1px #cfcfcf,0 0 1px #ffd94f,0 0 1px #ffd94f,0 0 2px #ffd94f;
+    -moz-box-shadow: inset 0 1px 1px #cfcfcf,0 0 1px #ffd94f,0 0 1px #ffd94f,0 0 2px #ffd94f;
+    box-shadow: inset 0 1px 1px #cfcfcf,0 0 1px #ffd94f,0 0 1px #ffd94f,0 0 2px #ffd94f;
+  }
 .input-note{
   margin:0;
   font-size: 85%;

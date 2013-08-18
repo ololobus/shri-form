@@ -32,6 +32,14 @@ window.form = {
       bar.find('.count').text(progress + "%");
       bar.find('.bar').animate({width: progress + "%"}, 400); //.css('width', progress + "%");
     });
+    
+    // Добавляем желтое свечение формам с фокусом
+    $(document).on('focus', '.question-text-input, .about-input.text-input', function(ev) {
+      $(this).closest('.input-outline').addClass('focused');
+    });
+    $(document).on('focusout', '.question-text-input, .about-input.text-input', function(ev) {
+      $(this).closest('.input-outline').removeClass('focused');
+    });
   },
   
   // Рендерит вопросы из списка по шаблону
@@ -92,13 +100,13 @@ window.form = {
     email_input = $('#Email');
     if (email_input.val() == "") {
       valid = false;
-      email_input.parent().append(this.error_template({text: 'Не заполнено поле "E-mail".'}));
+      email_input.parent().parent().append(this.error_template({text: 'Не заполнено поле "E-mail".'}));
     } else {
       if (this.email_regexp.exec(email_input.val())) {
         valid = true;
       } else {
         valid = false;
-        email_input.parent().append(this.error_template({text: 'Неверный адрес электронной почты.'}));
+        email_input.parent().parent().append(this.error_template({text: 'Неверный адрес электронной почты.'}));
       }
     };
     

@@ -60,7 +60,9 @@
                     <label for="MK">Ссылка на профиль в Моем Круге</label>
                   </td>
                   <td>
-                    <input id="MK" class="about-input text-input url-input" name="MK" type="url">
+                    <span class="input-outline">
+                      <input id="MK" class="about-input text-input url-input" name="MK">
+                    </span>
                   </td>
                 </tr>
                 <tr>
@@ -68,7 +70,9 @@
                     <label for="FIO">Имя, Фамилия</label>
                   </td>
                   <td>
-                    <input id="FIO" class="about-input text-input name-input" name="FIO" type="text">
+                    <span class="input-outline">
+                      <input id="FIO" class="about-input text-input name-input" name="FIO" type="text">
+                    </span>
                   </td>
                 </tr>
                 <tr>
@@ -76,7 +80,9 @@
                     <label for="Phone">Телефон</label>
                   </td>
                   <td>
-                    <input id="Phone" class="about-input text-input phone-input" name="Phone" type="tel">
+                    <span class="input-outline">
+                      <input id="Phone" class="about-input text-input phone-input" name="Phone">
+                    </span>
                     <p class="input-note">Пожалуйста, укажите код города</p>
                   </td>
                 </tr>
@@ -85,7 +91,9 @@
                     <label for="Email"><b>E-mail</b></label>
                   </td>
                   <td>
-                    <input id="Email" class="about-input text-input email-input" name="Email" type="xsd:email">
+                    <span class="input-outline">
+                      <input id="Email" class="about-input text-input email-input" name="Email">
+                    </span>
                   </td>
                 </tr>
                 <tr>
@@ -93,7 +101,9 @@
                     <label for="MoreInfo">Дополнительные сведения</label>
                   </td>
                   <td>
-                    <textarea class="about-input text-input" rows="4" cols="80" name="MoreInfo" id="MoreInfo"></textarea>
+                    <span class="input-outline">
+                      <textarea class="about-input text-input" rows="4" cols="80" name="MoreInfo" id="MoreInfo"></textarea>
+                    </span>
                   </td>
                 </tr>
                 <tr>
@@ -151,7 +161,9 @@
           <div class="question-text"><b>{{{text}}}</b></div>
           <div class="question-input">
             {{{extra_input}}}
-            <textarea class="question-text-input" rows="4" cols="80" name="q{{id}}_1" id="q{{id}}_1"></textarea>
+            <span class="input-outline">
+              <textarea class="question-text-input" rows="4" cols="80" name="q{{id}}_1" id="q{{id}}_1"></textarea>
+            </span>
           </div>
         </td>
       </tr>
