@@ -30,7 +30,7 @@ window.form = {
       var progress = Math.floor(answers / self.questions_proto.length * 100);
       var bar = $('#questionary-progress');
       bar.find('.count').text(progress + "%");
-      bar.find('.bar').animate({width: progress + "%"}, 400); //.css('width', progress + "%");
+      bar.find('.bar').animate({width: progress + "%"}, 400);
     });
     
     // Добавляем желтое свечение формам с фокусом
