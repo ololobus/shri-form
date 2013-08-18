@@ -46,7 +46,7 @@
                     Резюме до 250 КБ
                   </td>
                   <td>
-                    <input type="file" class="" hidefocus="true" name="FileResume" value="">
+                    <input id="FileResume" type="file" class="" hidefocus="true" name="FileResume" value="">
                   </td>
                 </tr>
                 <tr>
@@ -142,7 +142,6 @@
         <td class="left-column"><div class="question-id"><label for="q{{id}}_1"><em>Вопрос {{id}}</em></label></div></td>
         <td>
           <div class="question-text"><b>{{{text}}}</b></div>
-          <br>
           <div class="question-input">
             {{{extra_input}}}
             <textarea class="question-text-input" rows="4" cols="80" name="q{{id}}_1" id="q{{id}}_1"></textarea>
@@ -152,6 +151,9 @@
       <tr>
         <td colspan="2"><hr class="questions-separator"></td>
       </tr>
+    </script>
+    <script id="error-template" type="text/x-handlebars-template">
+      <div class="input-error">{{text}}</div>
     </script>
   </body>
 </html>

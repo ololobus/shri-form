@@ -8,6 +8,10 @@ body{
   margin:0 auto;
 }
 
+#FileResume{
+  margin:0;
+}
+
 .form-info{
   color:#333;
   font-size:14px;
@@ -85,4 +89,8 @@ li{
   margin:0;
   font-size: 85%;
   color: #999;
+}
+.input-error{
+  margin:5px 0 5px;
+  color:#f00;
 }
