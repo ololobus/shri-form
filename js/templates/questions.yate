@@ -1,0 +1,24 @@
+module "questions"
+
+match / {
+  <table class="table">
+    for .questions {
+      <tr class="question">
+        <td class="left-column"><div class="question-id"><label for="q{ .id }_1"><em>Вопрос { .id }</em></label></div></td>
+        <td>
+          <div class="question-text"><b>{ .text }</b></div>
+          <div class="question-input"> 
+            <p>{ .extra_input }</p>
+            <span class="input-outline">
+              <textarea class="question-text-input" rows="4" cols="80" name="q{ .id }_1" id="q{ .id }_1"></textarea>
+            </span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2"><hr class="questions-separator"></hr></td>
+      </tr>
+      apply .questions.question
+    }
+  </table>
+}

@@ -1,0 +1,5 @@
+module "error"
+
+match / {
+  <div class="input-error">{ .text }</div>
+}
