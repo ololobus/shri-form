@@ -7,8 +7,8 @@ window.form = {
   init: function() {
     this.form = $(this.el);
     this.questions_container = $('#questions-container');
-    this.question_template = Handlebars.compile($("#question-template").html());
-    this.error_template = Handlebars.compile($("#error-template").html());
+    // this.question_template = Handlebars.compile($("#question-template").html());
+    // this.error_template = Handlebars.compile($("#error-template").html());
     
     // Сворачиваем и разворачиваем разделы анкеты
     $('.form-group-title h3').on('click', function() {
@@ -44,10 +44,11 @@ window.form = {
   
   // Рендерит вопросы из списка по шаблону
   render: function() {
-    var self = this;
-    $.each(this.questions_proto, function(i, q) {
-      self.questions_container.append(self.question_template(q));
-    });
+    // var self = this;
+    // $.each(this.questions_proto, function(i, q) {
+    //   self.questions_container.append(self.question_template(q));
+    // });
+    this.questions_container.html(yr.run("questions", { questions: this.questions_proto }));
   },
   
   // Проверяет правильность заполненности формы
@@ -74,7 +75,8 @@ window.form = {
         valid = true;
       } else {
         valid = false;
-        file_input.parent().append(this.error_template({text: "Приложенный вами файл больше 250 КБ."}));
+        // file_input.parent().append(this.error_template({text: "Приложенный вами файл больше 250 КБ."}));
+        file_input.parent().append(yr.run('error', {text: "Приложенный вами файл больше 250 КБ."}));
       }
     };
     
@@ -84,7 +86,8 @@ window.form = {
       valid = true;
     } else {
       valid = false;
-      agree_input.parent().append(this.error_template({text: "Подтвердите, пожалуйста, своё согласие на передачу анкеты с вашими персональными данными."}));
+      // agree_input.parent().append(this.error_template({text: "Подтвердите, пожалуйста, своё согласие на передачу анкеты с вашими персональными данными."}));
+      agree_input.parent().append(yr.run('error', {text: "Подтвердите, пожалуйста, своё согласие на передачу анкеты с вашими персональными данными."}));
     };
     
     // Откуда узнали
@@ -93,20 +96,23 @@ window.form = {
       valid = true;
     } else {
       valid = false;
-      recommend_input.parent().append(this.error_template({text: "Укажите, пожалуйста, откуда вы узнали о нашем предложении."}));
+      // recommend_input.parent().append(this.error_template({text: "Укажите, пожалуйста, откуда вы узнали о нашем предложении."}));
+      recommend_input.parent().append(yr.run('error', {text: "Укажите, пожалуйста, откуда вы узнали о нашем предложении."}));
     };
     
     // Email
     email_input = $('#Email');
     if (email_input.val() == "") {
       valid = false;
-      email_input.parent().parent().append(this.error_template({text: 'Не заполнено поле "E-mail".'}));
+      // email_input.parent().parent().append(this.error_template({text: 'Не заполнено поле "E-mail".'}));
+      email_input.parent().parent().append(yr.run('error', {text: 'Не заполнено поле "E-mail".'}));
     } else {
       if (this.email_regexp.exec(email_input.val())) {
         valid = true;
       } else {
         valid = false;
-        email_input.parent().parent().append(this.error_template({text: 'Неверный адрес электронной почты.'}));
+        // email_input.parent().parent().append(this.error_template({text: 'Неверный адрес электронной почты.'}));
+        email_input.parent().parent().append(yr.run('error', {text: 'Неверный адрес электронной почты.'}));
       }
     };
     
