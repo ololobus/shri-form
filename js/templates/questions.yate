@@ -6,9 +6,9 @@ match / {
       <tr class="question">
         <td class="left-column"><div class="question-id"><label for="q{ .id }_1"><em>Вопрос { .id }</em></label></div></td>
         <td>
-          <div class="question-text"><b>{ .text }</b></div>
+          <div class="question-text"><b>{ html(.text) }</b></div>
           <div class="question-input"> 
-            <p>{ .extra_input }</p>
+            "{ html(.extra_input) }"
             <span class="input-outline">
               <textarea class="question-text-input" rows="4" cols="80" name="q{ .id }_1" id="q{ .id }_1"></textarea>
             </span>
